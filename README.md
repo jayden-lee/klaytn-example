@@ -1,4 +1,4 @@
-# Klaytn BApp Example
+# Klaytn DApp Example
 
 ## 0. Environment Setup
 - [Node.js 설치](https://nodejs.org/)
