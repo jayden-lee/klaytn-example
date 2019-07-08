@@ -16,7 +16,53 @@
 </head>
 
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset=2">
+        <h1 class="text-center">클레이튼</h1>
+        <h3 class="text-center">덧셈 게임</h3>
+        <h3 class="text-center">
+          <code>3초안에 맞출 시 0.1 KLAY 지급 이벤트</code>
+          <button type="button"
+                  class="btn btn-info pull-right"
+                  id="login"
+                  data-toggle="modal"
+                  data-target="#loginModal">
+                  로그인
+          </button>
+          <button type="button"
+                  class="btn btn-info pull-right"
+                  id="logout"
+                  style="display: none;"
+                  onclick="App.handleLogout()">
+                  로그아웃
+          </button>
+        </h3>
+      </div>
+    </div>
+  </div>
 
+  <div class="modal" tabindex="-1" role="dialog" id="loginModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="keystore">Keystore</label>
+            <input type="file" id="keystore" onchange="App.handleImport()">
+          </div>
+          <div class="form-group">
+              <label for="input-password">비밀번호</label>
+              <input type="password" class="form-control" id="input-password" onchange="App.handlePassword()">
+              <p class="help-block" id="message"></p>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="submit" onclick="App.handleLogin()">제출</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

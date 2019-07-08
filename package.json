@@ -1,9 +1,15 @@
 {
-  "name": "klay-dapp-boilerplate",
+  "name": "klay-dapp-example",
   "version": "0.0.1",
-  "description": "boilerplate for klaytn-based app",
+  "description": "klaytn study project",
   "main": "truffle.js",
+  "author": "gwanggi.lee@gmail.com",
+  "repository": {
+    "type": "git"
+  },
   "scripts": {
+    "deploy:re": "truffle deploy --compile-all --reset --network klaytn",
+    "deploy": "truffle deploy --network klaytn",
     "build": "webpack",
     "dev": "webpack-dev-server"
   },
