@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="utf-8">
@@ -18,11 +18,11 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset=2">
+      <div class="col-md-12 col-md-offset=2">
         <h1 class="text-center">클레이튼</h1>
         <h3 class="text-center">덧셈 게임</h3>
         <h3 class="text-center">
-          <code>3초안에 맞출 시 0.1 KLAY 지급 이벤트</code>
+          <code>3초안에 맞출 시 0.001 KLAY 지급 이벤트</code>
           <button type="button"
                   class="btn btn-info pull-right"
                   id="login"
@@ -38,6 +38,53 @@
                   로그아웃
           </button>
         </h3>
+        <div class="text-center" id="address"></div>
+        <div class="text-center" id="contractBalance"></div>
+        <hr/>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="row text-center">
+    <div id="game" style="display: none;">
+      <div class="yellow-box" id="start">
+        <a href="#" onclick="App.generateNumbers()">시작</a>
+      </div>
+      <div class="yellow-box" id="question" style="display: none;">
+        <span id="num1"></span> + <span id="num2"></span> = ?
+        <div class="input-group">
+          <input type="number" class="form-control" id="answer" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" onclick="App.submitAnswer()">제출</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="spin"></div>
+  
+  <div class="row text-center">
+    <p id="timer"></p>
+  </div>
+
+  <div class="row text-center">
+    <div id="transaction"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 col-md-offset-5">
+      <div id="owner" style="display: none;">
+        <hr/>
+        <label>Contract에 KLAY 전송</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="amount" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" onclick="App.deposit()">송금</button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
